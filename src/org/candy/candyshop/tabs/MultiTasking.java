@@ -100,13 +100,8 @@ public class MultiTasking extends SettingsPreferenceFragment implements
     }
 
     @Override
-    public int getDialogMetricsCategory(int dialogId) {
-        switch (dialogId) {
-            case DIALOG_SCREENSHOT_EDIT_APP:
-                return MetricsEvent.CANDYSHOP;
-            default:
-                return 0;
-        }
+    public int getMetricsCategory() {
+        return MetricsProto.MetricsEvent.CANDYSHOP;
     }
 
     @Override
@@ -128,11 +123,6 @@ public class MultiTasking extends SettingsPreferenceFragment implements
                     Toast.LENGTH_LONG).show();
         }
         return true;
-    }
-
-    @Override
-    public int getMetricsCategory() {
-        return MetricsEvent.CANDYSHOP;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
